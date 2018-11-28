@@ -1,0 +1,89 @@
+*{
+    box-shadow: border-box;
+}
+ 
+.warp{
+    max-width: 450px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    background:gray;
+}
+
+.warp h2{
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+.social-media{
+    text-align:center;
+    margin-top: 30px;
+}
+
+button{
+    padding: 10px;
+    width: 44%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+button a{
+    text-decoration: none;
+    margin-left: 4px;
+    color: #fff;
+}
+
+button:nth-child(1){
+    background: purple;
+}
+
+button:nth-child(2){
+    background:green;
+}
+
+button:hover{
+    background: rgba(0,0,0,0.6)
+}
+
+form{
+    margin-top: 20px;
+}
+
+input[type=text],input[type=password],input[type=submit]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    outline: none;
+    border:none;
+    font-size: 17px;
+    border-radius: 5px;
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+input[type=submit]{
+    background: red;
+    border: node;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+input[type=submit]:hover{
+    background: orange
+}
+
+p{
+   text-align:center;
+   font-weight: bold;
+}
+p a{
+    text-decoration: none;
+}
