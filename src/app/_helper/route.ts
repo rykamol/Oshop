@@ -11,7 +11,6 @@ import { ProductsComponent } from '../products/products.component';
 import { OrderSuccessComponent } from '../order-success/order-success.component';
 
 export const appRoute: Routes = [
-    {path: '', component: HomeComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'my-orders', component: MyOrdersComponent},
     {path: 'shoping-cart', component: ShopingCartComponent},
@@ -21,4 +20,6 @@ export const appRoute: Routes = [
 
     {path: 'admin/products', component: AdminProductsComponent},
     {path: 'admin/orders', component: AdminOrdersComponent},
+    {path: '**', redirectTo: 'products', pathMatch: 'full'},
+
 ]
