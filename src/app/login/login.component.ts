@@ -14,6 +14,5 @@ export class LoginComponent {
 
   login() {
     this.auth.login();
-    this.router.navigate(['/products']);
   }
 }

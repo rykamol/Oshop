@@ -1,9 +1,10 @@
+import { AuthGuard } from './_guards/auth.guard';
 import { AuthService } from './sevices/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireDatabaseModule} from '@angular/fire/database';
-import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
@@ -44,7 +45,10 @@ import { appRoute } from './_helper/route';
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoute)
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
