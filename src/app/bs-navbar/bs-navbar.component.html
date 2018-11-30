@@ -9,22 +9,24 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/shoping-cart']" routerLinkActive="router-link-active">Shoping cart</a>
       </li>
-      <li dropdown class="nav-item dropdown">
+       <li *ngIf="auth.user$ | async as user;else anonymoususer" dropdown class="nav-item dropdown">
         <a dropdownToggle class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          Username
+          {{user.displayName}}
         </a>
         <div *dropdownMenu class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item" routerLink='/my-orders'>My Orders</a>
           <a class="dropdown-item" routerLink='/admin/orders'>Manage Orders</a>
           <a class="dropdown-item" routerLink='/admin/products'>Manage Products</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" routerLink='/logout'>Logout</a>
+          <a (click)="logout()" class="dropdown-item">Logout</a>
         </div>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login </a>
-      </li>
+      <ng-template #anonymoususer>
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login </a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>

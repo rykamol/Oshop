@@ -1,3 +1,4 @@
+import { AuthService } from './sevices/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire';
@@ -43,7 +44,7 @@ import { appRoute } from './_helper/route';
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoute)
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
