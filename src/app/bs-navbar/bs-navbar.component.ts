@@ -1,7 +1,7 @@
-import { AuthService } from './../sevices/auth.service';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { Router } from '@angular/router';
+import { AuthService } from '../_services/auth.service';
 
 
 // tslint:disable-next-line:no-unused-expression

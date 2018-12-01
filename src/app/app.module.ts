@@ -1,5 +1,5 @@
+import { AdminGuard } from './_guards/admin.guard';
 import { AuthGuard } from './_guards/auth.guard';
-import { AuthService } from './sevices/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
@@ -22,6 +22,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { appRoute } from './_helper/route';
+import { AuthService } from './_services/auth.service';
+import { UserService } from './_services/user.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { appRoute } from './_helper/route';
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    UserService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

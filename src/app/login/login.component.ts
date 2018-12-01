@@ -1,7 +1,7 @@
-import { AuthService } from './../sevices/auth.service';
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {Router} from '@angular/router';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-login',

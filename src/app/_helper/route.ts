@@ -1,3 +1,4 @@
+import { AdminGuard } from './../_guards/admin.guard';
 import { AuthGuard } from './../_guards/auth.guard';
 import { AdminOrdersComponent } from './../admin/admin-orders/admin-orders.component';
 import { AdminProductsComponent } from './../admin/admin-products/admin-products.component';
@@ -11,6 +12,8 @@ import { ProductsComponent } from '../products/products.component';
 import { OrderSuccessComponent } from '../order-success/order-success.component';
 
 export const appRoute: Routes = [
+
+    { path: '', redirectTo: 'products', pathMatch: 'full' },
     { path: 'products', component: ProductsComponent},
     { path: 'login', component: LoginComponent },
     {
@@ -22,10 +25,12 @@ export const appRoute: Routes = [
             { path: 'shoping-cart', component: ShopingCartComponent },
             { path: 'check-out', component: CheckOutComponent },
             { path: 'order-success', component: OrderSuccessComponent }
+          
         ]
+        
     },
-    { path: 'admin/products', component: AdminProductsComponent },
-    { path: 'admin/orders', component: AdminOrdersComponent },
-    { path: '**', redirectTo: 'products', pathMatch: 'full' },
+    { path: 'admin/products', component: AdminProductsComponent,canActivate: [AuthGuard, AdminGuard] },
+    { path: 'admin/orders', component: AdminOrdersComponent,canActivate: [ AuthGuard, AdminGuard] },
+  
 
 ]
