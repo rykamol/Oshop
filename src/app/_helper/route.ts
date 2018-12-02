@@ -14,7 +14,7 @@ import { OrderSuccessComponent } from '../order-success/order-success.component'
 export const appRoute: Routes = [
 
     { path: '', redirectTo: 'products', pathMatch: 'full' },
-    { path: 'products', component: ProductsComponent},
+    { path: 'products', component: ProductsComponent },
     { path: 'login', component: LoginComponent },
     {
         path: '',
@@ -24,13 +24,9 @@ export const appRoute: Routes = [
             { path: 'my-orders', component: MyOrdersComponent },
             { path: 'shoping-cart', component: ShopingCartComponent },
             { path: 'check-out', component: CheckOutComponent },
-            { path: 'order-success', component: OrderSuccessComponent }
-          
+            { path: 'order-success', component: OrderSuccessComponent },
+            { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminGuard] },
+            { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminGuard] }
         ]
-        
-    },
-    { path: 'admin/products', component: AdminProductsComponent,canActivate: [AuthGuard, AdminGuard] },
-    { path: 'admin/orders', component: AdminOrdersComponent,canActivate: [ AuthGuard, AdminGuard] },
-  
-
+    }
 ]
