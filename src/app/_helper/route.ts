@@ -1,3 +1,4 @@
+import { ProductFormComponent } from './../admin/product-form/product-form.component';
 import { AdminGuard } from './../_guards/admin.guard';
 import { AuthGuard } from './../_guards/auth.guard';
 import { AdminOrdersComponent } from './../admin/admin-orders/admin-orders.component';
@@ -26,7 +27,8 @@ export const appRoute: Routes = [
             { path: 'check-out', component: CheckOutComponent },
             { path: 'order-success', component: OrderSuccessComponent },
             { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminGuard] },
-            { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminGuard] }
+            { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminGuard]},
+            { path: 'admin/product-form', component: ProductFormComponent, canActivate: [AuthGuard, AdminGuard] }
         ]
     }
 ]
